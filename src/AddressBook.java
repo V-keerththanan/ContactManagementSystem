@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class AddressBook {
-    private final ArrayList<Contact> contactList=new ArrayList<Contact>();
+    private  ArrayList<Contact> contactList = new ArrayList<Contact>();
     String createNewContact(String name,String email,String pNo){
 
         try{
@@ -61,7 +61,7 @@ public class AddressBook {
 
     }
 
-    public void displayOneContact(Contact c){
+    private void displayOneContact(Contact c){
         System.out.println("Name of person :- "+c.getName());
         System.out.println("Email address :- "+c.getEmail());
         System.out.println("Phone Number :- "+c.getPhoneNumber());
