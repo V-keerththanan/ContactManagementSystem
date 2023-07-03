@@ -18,9 +18,10 @@ public class AddressBook {
     }
     public void deleteContact(String email){
         for(Contact c:contactList){
-            if(c.getEmail()==email){
+            if(c.getEmail().equals(email)){
                 contactList.remove(c);
                 System.out.println("contact removed from book...");
+                break;
             }
         }
     }
