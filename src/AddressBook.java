@@ -5,25 +5,36 @@ public class AddressBook {
     String createNewContact(String name,String email,String pNo){
 
         try{
+            for (Contact c:contactList){
+                c.getEmail().equals(email);
+                throw new RuntimeException("email already available...");
+            }
             Contact contact=new Contact();
             contact.setName(name);
             contact.setEmail(email);
             contact.setPhoneNumber(pNo);
 
         }catch (Exception e){
-            throw new RuntimeException("can not create and add this contact");
+            System.out.println(  e.getMessage());
         }
         return "contact created and added to address book";
 
     }
     public void deleteContact(String email){
+        int track=0;
         for(Contact c:contactList){
             if(c.getEmail().equals(email)){
                 contactList.remove(c);
-                System.out.println("contact removed from book...");
+                track++;
                 break;
             }
         }
+        if(track==0){
+            System.out.println("There is no such contact with given Email id...!");
+        }else{
+            System.out.println("Contact removed from address book...!");
+        }
+
     }
 
     public void displayContact(){
