@@ -4,17 +4,25 @@ class Contact:
         self.__email=email
         self.__phoneNo=phone
 
-    def getName(self):
+    @property
+    def name(self):
         return self.__name
-    def setName(self,name):
-        self.__name=name
 
-    def getEmail(self):
+    @name.setter
+    def name(self,name):
+        self.name=name
+
+    @property
+    def email(self):
         return self.__email
-    def setName(self,email):
+
+    @email.setter
+    def email(self,email):
         self.__email=email
 
-    def getPhoneNo(self,phone):
+    @property
+    def phoneNo(self):
         return self.__phoneNo
-    def setName(self,phone):
-        self.__phoneNo=phone
+    @phoneNo.setter
+    def phoneNo(self,phoneNumber):
+        self.__phoneNo=phoneNumber
